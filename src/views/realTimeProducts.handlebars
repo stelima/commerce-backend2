@@ -1,0 +1,60 @@
+
+  <h1>Formulário de Produto</h1>
+  <form id="product-form" >
+    <div>
+      <label for="title">Título:</label>
+      <input type="text" id="title" name="title">
+    {{!-- </div>
+    <div>
+      <label for="description">Descrição:</label>
+      <textarea id="description" name="description" required></textarea>
+    </div>
+    <div>
+      <label for="price">Preço:</label>
+      <input type="number" id="price" name="price" step="0.01" required>
+    </div>
+    <div>
+      <label for="thumbnail">Thumbnail:</label>
+      <input type="text" id="thumbnail" name="thumbnail" required>
+    </div>
+    <div>
+      <label for="code">Código:</label>
+      <input type="text" id="code" name="code" required>
+    </div>
+    <div>
+      <label for="stock">Estoque:</label>
+      <input type="number" id="stock" name="stock" required>
+    </div> --}}
+    <div>
+      <button type="submit">Salvar</button>
+    </div>
+  </form>
+<div>
+    <h3>Produtos:</h3>
+    <ul id="products"></ul>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+
+<script>
+  const socket = io();
+
+   document.getElementById('product-form').addEventListener('submit', (event) => {
+        event.preventDefault();
+        const inputTitle = document.getElementById('title');
+        const title = inputTitle.value;
+        //const inputDescription = document.getElementById('description');
+       // const description = inputDescription.value;
+        socket.emit('product', title);
+        inputTitle.value = '';
+       // inputDescription.value = '';
+    });
+
+      socket.on('product', (data) => {
+      console.log(data)
+      const products = document.getElementById('products');
+      const product = document.createElement('li');
+      product.innerText = data;
+      products.appendChild(product);
+  });
+
+</script>

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 6,
+    "title": "Camiseta",
+    "description": "Camiseta básica preta",
+    "price": 70,
+    "thumbnail": "thumbnail1.jpg",
+    "code": "ABC123",
+    "stock": 15
+  },
+  {
+    "id": 8,
+    "title": "Camiseta",
+    "description": "Camiseta básica preta",
+    "price": 70,
+    "thumbnail": "thumbnail1.jpg",
+    "code": "ABC123",
+    "stock": 15
+  },
+  {
+    "id": 9,
+    "title": "Calça",
+    "description": "Calça jeans azul",
+    "price": 100,
+    "thumbnail": "thumbnail2.jpg",
+    "code": "DEF456",
+    "stock": 10
+  },
+  {
+    "id": 11,
+    "title": "Calça",
+    "description": "Calça jeans azul",
+    "price": 100,
+    "thumbnail": "thumbnail2.jpg",
+    "code": "DEF456",
+    "stock": 10
+  }
+]
